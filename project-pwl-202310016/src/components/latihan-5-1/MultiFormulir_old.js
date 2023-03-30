@@ -1,119 +1,15 @@
 import React, { Component } from 'react'
 import { Button, Form, Modal, Col, Row, Container, Table, TableProps } from "react-bootstrap";
-import './Formulir.css'
-import bg from "../assets/landscape.jpg";
+// import './Formulir.css'
+import "./../Formulir.css"
+import bg from "../../assets/landscape.jpg";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
-function resultPost({props, obj}) {
-    return (
-        <div className="result">
-            {(obj.map((v, index) => (
-                (v) ? (
-                    <div className="border-bottom mb-3" key={index}>
-                        <p><span className="fw-bolder">NPM:</span> {props.v.npm}</p>
-                        <p><span className="fw-bolder">Fullname:</span> {props.firstName} {props.middleName} {props.lastName} </p>
-                        <p><span className="fw-bolder">Birthdate:</span> {props.birthDate} </p>
-                        <p><span className="fw-bolder">Age:</span> {this.calculateAge(props.birthDate)} years old </p>
-                    </div>
-                ) : ""
-            )))}
-        </div>
-    );
-}
-
-function RowItem({ data, index }) {
-    return (
-        <tr>
-            <td>
-                <input
-                    className='form-control'
-                    type="number"
-                    pattern="[0-9]*"
-                    placeholder="Enter NPM"
-                    value={this.state.npm}
-                    onChange={(e) => this.setState({ npm: Number(e.target.value) })}
-                    required
-                    maxLength={10}
-                />
-            </td>
-
-            <td>
-                <input
-                    className='form-control'
-                    type="text"
-                    placeholder="Enter First Name"
-                    value={this.state.firstName}
-                    onChange={(e) => this.setState({ firstName: e.target.value })}
-                    required
-                />
-            </td>
-
-            <td>
-                <input
-                    className='form-control'
-                    type="text"
-                    placeholder="Enter Middle Name"
-                    value={this.state.middleName}
-                    onChange={(e) => this.setState({ middleName: e.target.value })}
-                />
-            </td>
-
-            <td>
-                <input
-                    type="text"
-                    placeholder="Enter Last Name"
-                    value={this.state.lastName}
-                    onChange={(e) => this.setState({ lastName: e.target.value })}
-                    required
-                />
-            </td>
-
-            <td>
-                <DatePicker
-                    className="form-control"
-                    placeholderText="YYYY-MM-DD"
-                    dateFormat="yyyy-MM-dd"
-                    value={this.state.birthDate}
-                    onChange={(date) => this.setState({ birthDate: this.formatDate(date.target.value)})}
-                    required
-                />
-            </td>
-            {index !== 0 ? (
-                <td>
-                    <button className="btn btn-icon btn-sm btn-danger" type='button' onClick={(e) => this.setState({
-                        profData: ((prev) =>
-                        {
-                            const newData = [...prev]
-                            delete newData[index]
-                            return newData
-                        }
-                        )
-                    })}>
-                        <i className="bi bi-trash"></i>
-                    </button>
-                </td>
-            ) : ''}
-        </tr>
-    )
-}
-
-export default class MultiFormulir extends Component {
+export default class MultiFormulir_old extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            date: new Date().getFullYear(),
-            npm: "",
-            firstName: "",
-            middleName: "",
-            lastName: "",
-            birthDate: "",
-            age: "",
-            show: false,
-            validated: false,
-            profData: []
-        };
         this.onInputchange = this.onInputchange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -121,6 +17,26 @@ export default class MultiFormulir extends Component {
         this.RowItem = this.RowItem.bind(this);
         this.formatDate = this.formatDate.bind(this);
         this.resultPost = this.resultPost.bind(this);
+        this.state = {
+            date: new Date().getFullYear(),
+            show: false,
+            validated: false,
+            objitem:{
+                npm: "",
+                firstName: "",
+                middleName: "",
+                lastName: "",
+                birthDate: "",
+                age: ""
+            },
+            profData: []
+        };
+        
+    }
+
+    componentDidMount(){
+        console.log(this.state.objitem);
+        
     }
 
     onInputchange(event) {
@@ -200,7 +116,8 @@ export default class MultiFormulir extends Component {
         return age;
     }
 
-    RowItem({ data, index }) {
+    //RowItem({ data, index }) {
+    RowItem(data, index) {
         return (
             <tr>
                 <td>
@@ -253,15 +170,14 @@ export default class MultiFormulir extends Component {
                         placeholderText="YYYY-MM-DD"
                         dateFormat="yyyy-MM-dd"
                         value={this.state.birthDate}
-                        onChange={(date) => this.setState({ birthDate: this.formatDate(date.target.value)})}
+                        onChange={(date) => this.setState({ birthDate: this.formatDate(date.target.value) })}
                         required
                     />
                 </td>
                 {index !== 0 ? (
                     <td>
                         <button className="btn btn-icon btn-sm btn-danger" type='button' onClick={(e) => this.setState({
-                            profData: ((prev) =>
-                            {
+                            profData: ((prev) => {
                                 const newData = [...prev]
                                 delete newData[index]
                                 return newData
@@ -305,9 +221,10 @@ export default class MultiFormulir extends Component {
                             </thead>
                             <tbody>
                                 {this.state.profData.map((v, index) => (
-                                    (v) ? <this.RowItem key={index} data={v} index={index} /> : ''
+                                    //(v) ? <this.RowItem key={index} data={v} index={index} /> : ''
+                                    (v) ? this.RowItem(v, index) : ''
                                 ))}
-                                <RowItem data={this.state} index={this.state} />
+                                {/* <RowItem data={this.state.profData} index={this.state.profData} /> */}
                             </tbody>
                             <tfoot>
                                 <tr>
