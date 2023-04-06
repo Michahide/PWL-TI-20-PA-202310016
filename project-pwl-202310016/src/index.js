@@ -9,7 +9,7 @@ import Latihan_5_1 from './components/latihan-5-1/Latihan_5_1';
 import Dashboard from './components';
 import MultiFormulir from './components/latihan-5-1/MultiFormulir';
 import MultiFormulir_old from './components/latihan-5-1/MultiFormulir_old';
-import AppRoute from './components/latihan-3-1/apps/AppRoute';
+import AppRoute from './components/latihan-4/apps/routes/AppRoute';
 import { BrowserRouter } from 'react-router-dom';
 
 const { PUBLIC_URL } = process.env;
