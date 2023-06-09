@@ -9,8 +9,9 @@ import Latihan_5_1 from './components/latihan-5-1/Latihan_5_1';
 import Dashboard from './components';
 import MultiFormulir from './components/latihan-5-1/MultiFormulir';
 import MultiFormulir_old from './components/latihan-5-1/MultiFormulir_old';
-import AppRoute from './components/latihan-4/apps/routes/AppRoute';
+// import AppRoute from './components/latihan-4/apps/routes/AppRoute';
 import { BrowserRouter } from 'react-router-dom';
+import AppRoute from './components/quiz-2/apps/routes/AppRoute';
 
 const { PUBLIC_URL } = process.env;
 

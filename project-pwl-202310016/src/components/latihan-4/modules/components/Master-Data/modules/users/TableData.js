@@ -1,8 +1,8 @@
 import React from "react";
 import AlertInfo from './../../../../../../latihan-3-1/layouts/components/alerts/AlertInfo';
 import Messages from './../../../Messages/Messages';
-export default function TableData({data, message}) {
-  const ItemProduct = ({item}) => {
+export default function TableData({ data, message }) {
+  const ItemProduct = ({ item, index }) => {
     return (
       // <div className="card item mb-8">
       //   <div className="card-body p-0">
@@ -32,6 +32,15 @@ export default function TableData({data, message}) {
         <td>{item.lastname}</td>
         <td>{item.birthdate}</td>
         <td>{item.npm}</td>
+        {/* <td>
+          <button className="btn btn-icon btn-sm btn-primary" type='button' onClick={(e) => item.data((prev) => {
+            const newData = [...prev]
+            delete newData[index]
+            return newData
+          })}>
+            <i className="bi bi-info"></i>
+          </button>
+        </td> */}
         {/* <td>{item.programStudy}</td>
         <td>{item.programs}</td> */}
       </tr>
@@ -73,16 +82,17 @@ export default function TableData({data, message}) {
             <th>Last Name</th>
             <th>Birth Date</th>
             <th>NPM</th>
+            {/* <th>Lihat</th> */}
             {/* <th>Program Study</th> */}
           </tr>
         </thead>
         {
           (Object.values(data).length > 0) ? (
-          data.map((e, index) => (
-            <tbody key={index}>
-              <ItemProduct item={e} />
-            </tbody>
-          ))
+            data.map((e, index) => (
+              <tbody key={index}>
+                <ItemProduct item={e} index={index} />
+              </tbody>
+            ))
           ) : (
             <div className="col-12">
               <p>No record found</p>
