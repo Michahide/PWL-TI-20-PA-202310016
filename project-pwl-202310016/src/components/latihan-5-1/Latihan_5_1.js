@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
-import Layout from './../Layout';
+import Layout from './Layout';
 
 
 export default class Latihan_5_1 extends Component {

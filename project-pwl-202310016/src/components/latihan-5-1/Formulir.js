@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form, Modal, Col, Row, Container } from "react-bootstrap";
 import './Formulir.css'
-import bg from "../assets/landscape.jpg";
+import bg from "../../assets/landscape.jpg";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import 'react-datepicker/dist/react-datepicker.css';

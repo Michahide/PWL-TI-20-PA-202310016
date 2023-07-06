@@ -9,7 +9,7 @@ import { DatePicker } from 'react-datepicker';
 import CallAxios from './../../../Library/CallAxios';
 
 export function Users() {
-  //const [users, setUsers] = useState([]);
+  const [user, setUser] = useState([]);
   const [users, setUsers] = useState({
     loading: false,
     data: [],
@@ -32,6 +32,7 @@ export function Users() {
         //console.log(users)
         let results = response.data.data;
         if(results){
+          setUser(results);
           setUsers({ ...users, loading: false, message:"", data: results });
         } else {
           setUsers({ ...users, loading: false, message:"No record found"});
@@ -45,7 +46,7 @@ export function Users() {
 
   useEffect(() => {
     getUsers()
-  }, [])
+  }, [user])
 
   return (
     <div id="users-master">
@@ -78,12 +79,12 @@ export function Users() {
             </div>
           </div>
 
-          {(users.loading) ? <LoadingSpin /> : ''}
+          {/* {(users.loading) ? <LoadingSpin /> : ''}
           {(users.message) ? <AlertInfo message={users.message.name+". "+users.message.message} variant="danger" /> : ""}
             <div className={"users-items "+ +((users.loading) ? "d-none": "")}>
-              <TableData data={users.data} message={users.message} />
-            </div>
-
+              <TableData data={users} message={users.message} />
+            </div> */}
+          <TableData data={user} />
         </div>
         <div className="col-sm-12 col-lg-4">
           <FormUsers getUsers={getUsers} />

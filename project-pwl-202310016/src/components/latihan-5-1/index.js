@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import FormMulti from './latihan/FormMulti';
-import StickyNotes from './latihan/StickyNotes';
+import StickyNotes from './../latihan/StickyNotes';
 import Layout from './Layout'
 import Widget1 from './Widget1';
+import FormMulti from './../latihan/FormMulti';
 
 export default function Dashboard() {
     const [title, setTitle] = useState("My Apps");

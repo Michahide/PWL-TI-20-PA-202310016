@@ -11,14 +11,20 @@
     "bootstrap-icons": "^1.10.3",
     "browserlist": "^1.0.1",
     "browserslist": "^4.6.3",
+    "dotenv": "^16.3.1",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "hint": "^7.1.8",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.1",
+    "jwt-decode": "^3.1.2",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-datepicker": "^4.10.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -45,7 +51,11 @@
       "last 1 safari version"
     ]
   },
-  "system_param":{
+  "system_param": {
     "hostAPI": "http://localhost:8080/"
+  },
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2"
   }
 }

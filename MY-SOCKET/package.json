@@ -1,0 +1,17 @@
+{
+  "name": "my-socket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Mervin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "jquery": "^3.7.0",
+    "socket.io": "^4.7.1"
+  }
+}

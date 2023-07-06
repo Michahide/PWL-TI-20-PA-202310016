@@ -1,12 +1,12 @@
 import React, { Component, useState } from 'react'
 import { Button, Form, Modal, Col, Row, Container, Table, TableProps } from "react-bootstrap";
 // import './Formulir.css'
-import "./../Formulir.css"
+import "./Formulir.css"
 import bg from "../../assets/landscape.jpg";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import Layout from '../Layout';
+import Layout from './Layout';
 
 export default function MultiFormulir() {
     var today = new Date();

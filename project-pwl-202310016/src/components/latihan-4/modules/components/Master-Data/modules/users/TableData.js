@@ -2,6 +2,7 @@ import React from "react";
 import AlertInfo from './../../../../../../latihan-3-1/layouts/components/alerts/AlertInfo';
 import Messages from './../../../Messages/Messages';
 export default function TableData({ data, message }) {
+  console.log(data);
   const ItemProduct = ({ item, index }) => {
     return (
       // <div className="card item mb-8">

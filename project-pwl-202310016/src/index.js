@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import App from './App';
-import Formulir from './components/Formulir'
+// import App from './App';
+// import Formulir from './components/latihan-5-1/Formulir'
 import reportWebVitals from './reportWebVitals';
-import Latihan_5_1 from './components/latihan-5-1/Latihan_5_1';
-import Dashboard from './components';
-import MultiFormulir from './components/latihan-5-1/MultiFormulir';
-import MultiFormulir_old from './components/latihan-5-1/MultiFormulir_old';
+// import Latihan_5_1 from './components/latihan-5-1/Latihan_5_1';
+// import MultiFormulir from './components/latihan-5-1/MultiFormulir';
+// import MultiFormulir_old from './components/latihan-5-1/MultiFormulir_old';
 // import AppRoute from './components/latihan-4/apps/routes/AppRoute';
 import { BrowserRouter } from 'react-router-dom';
-import AppRoute from './components/quiz-2/apps/routes/AppRoute';
+// import AppRoute from './components/quiz-2/apps/routes/AppRoute';
+// import Dashboard from './components/latihan-5-1/index';
+// import Websocket from './components/websocket/websocket';
+import AppRoute from './components/latihan-6-auth/apps/routes/AppRoute';
 
 const { PUBLIC_URL } = process.env;
 

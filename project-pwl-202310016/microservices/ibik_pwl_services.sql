@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 31, 2023 at 06:45 AM
+-- Generation Time: Jun 09, 2023 at 05:31 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -30,17 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `code` varchar(10) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
   `credit` int(11) DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT NULL,
-  `name` varchar(50) DEFAULT NULL
+  `is_active` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`id`, `code`, `credit`, `is_active`, `name`) VALUES
-(1, 'TIFA3S3', 3, 1, 'Teknologi Microservices / Webservices');
+INSERT INTO `courses` (`id`, `code`, `name`, `credit`, `is_active`) VALUES
+(1, 'TIFA3S3', 'Teknologi Microservices / Webservices', 3, 1),
+(2, 'TIFA2Q3', 'Pemrograman Web', 3, 1),
+(3, 'TIFA3P3', 'Pemrograman Perangkat Bergerak', 3, 1),
+(4, 'TIFA3V3', 'Pemogrograman Web Lanjut', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -54,19 +57,24 @@ CREATE TABLE `products` (
   `is_active` tinyint(1) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
   `price` varchar(50) DEFAULT NULL,
-  `stock` int(10) DEFAULT NULL
+  `stock` int(10) DEFAULT NULL,
+  `images` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `description`, `is_active`, `name`, `price`, `stock`) VALUES
-(1, 'bahan dari karet', 1, 'Sendal Jepit SWallow', '30000', 5),
-(2, 'dari kedelai sapi', 1, 'Kecap ABC', '25000', 10),
-(3, 'langsung dari pohon jati', 1, 'Tissue Keseleo', '8000', 5),
-(4, 'Dari beling, hati2 pecah ', 1, 'Toples Acar', '93000', 10),
-(6, 'Dari tanah kuburan', 1, 'Gelas Kupi', '35000', 20);
+INSERT INTO `products` (`id`, `description`, `is_active`, `name`, `price`, `stock`, `images`) VALUES
+(1, 'bahan dari karet', 1, 'Sendal Jepit SWallow', '30000', 5, NULL),
+(2, 'dari kedelai sapi', 1, 'Kecap ABC', '25000', 10, NULL),
+(3, 'langsung dari pohon jati', 1, 'Tissue Keseleo', '8000', 5, NULL),
+(4, 'Dari beling, hati2 pecah ', 1, 'Toples Acar', '93000', 10, NULL),
+(6, 'Dari tanah kuburan', 1, 'Gelas Kupi', '35000', 20, NULL),
+(7, 'ddd', 1, 'sdsd', '30000', 3, NULL),
+(8, 'asdasd', 1, 'asdsad', '222222', 1, NULL),
+(9, 'asd', 1, 'yabui', '3000', 2, NULL),
+(10, 'asd', 1, 'yabui2', '3000', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -167,7 +175,8 @@ INSERT INTO `students` (`id`, `birthdate`, `email`, `firstname`, `lastname`, `mi
 (22, '2000-11-12', '202310068@student.ibik.ac.id', 'Afanda', 'Faizulyan', 'Rafi', '202310068', 6, 1),
 (23, '2000-11-12', '202310072@student.ibik.ac.id', 'Fajar', 'Alfianto', NULL, '202310072', 6, 1),
 (24, '2000-11-12', '202310077@student.ibik.ac.id', 'Nicholas', 'Fico', NULL, '202310077', 6, 1),
-(25, '2000-11-12', '222310082@student.ibik.ac.id', 'Soni', 'Nugraha', NULL, '222310082', 6, 1);
+(25, '2000-11-12', '222310082@student.ibik.ac.id', 'Soni', 'Nugraha', NULL, '222310082', 6, 1),
+(26, '2000-01-23', 'upin.ipn@gmail.com', 'Upin', 'Ipin', 'Bin', '202310098', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -269,13 +278,13 @@ ALTER TABLE `student_rel_product`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `programs`
@@ -293,7 +302,7 @@ ALTER TABLE `program_study`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables
